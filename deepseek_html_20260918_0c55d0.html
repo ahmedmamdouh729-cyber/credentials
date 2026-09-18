@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Certified Management Accountant — Credly</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<style>
+/* ============ RESET ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+  font-size:15px;line-height:1.5;color:#1c1c1c;background:#fff;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+a{color:#00635b;text-decoration:none;}
+a:hover{text-decoration:underline;}
+button{font:inherit;cursor:pointer;border:0;background:none;}
+img{display:block;max-width:100%;height:auto;}
+
+:root{
+  --green:#00635b;
+  --green-dark:#004f48;
+  --orange:#f26e21;
+  --text:#1c1c1c;
+  --line:#dfe3e6;
+  --gray-bg:#f1f1f1;
+  --pill-bg:#eef1f0;
+  --danger:#d32f2f;
+}
+
+.page{max-width:1400px;margin:0 auto;}
+
+/* ============ HEADER ============ */
+.header{
+  height:90px;display:flex;align-items:center;
+  padding:0 45px 0 40px;background:#fff;
+  border-bottom:1px solid var(--line);gap:30px;
+}
+.logo{display:flex;align-items:center;flex-shrink:0;text-decoration:none;}
+.logo svg{display:block;}
+
+.search-box{flex:1;max-width:640px;position:relative;margin-left:8px;}
+.search-box input{
+  width:100%;height:50px;padding:0 20px 0 50px;
+  border:1px solid #b8c0c4;border-radius:26px;
+  font-size:14.5px;font-family:inherit;color:#2c2c2c;background:#fff;outline:none;
+  transition:border-color .15s ease,box-shadow .15s ease;
+}
+.search-box input::placeholder{color:#8a9199;}
+.search-box input:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(0,99,91,.12);}
+.search-box svg{
+  position:absolute;left:18px;top:50%;transform:translateY(-50%);
+  width:19px;height:19px;stroke:#5b6570;stroke-width:2;fill:none;pointer-events:none;
+}
+
+.header-actions{display:flex;gap:16px;margin-left:auto;}
+.btn{
+  height:52px;padding:0 26px;border-radius:4px;font-size:14.5px;font-weight:600;
+  display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;
+  border:2px solid var(--green);transition:background .15s ease,color .15s ease;
+}
+.btn-outline{background:#fff;color:var(--green);}
+.btn-outline:hover{background:#f4faf9;text-decoration:none;}
+.btn-primary{background:var(--green);color:#fff;}
+.btn-primary:hover{background:var(--green-dark);text-decoration:none;}
+
+/* ============ STATUS BAR ============ */
+.status-bar{
+  background:var(--gray-bg);min-height:127px;
+  padding:20px 45px 20px 40px;
+  display:grid;grid-template-columns:88px minmax(0,1fr) auto;gap:28px;align-items:center;
+  border-bottom:1px solid #e6e8ea;
+}
+.status-icon{
+  width:88px;height:88px;border-radius:50%;background:#fff;
+  border:1px solid #d0d4d7;display:flex;align-items:center;justify-content:center;
+  color:#e00023;font-size:50px;font-weight:700;line-height:1;font-family:Helvetica,Arial,sans-serif;
+}
+.status-text{font-size:15px;line-height:1.9;}
+.status-text .name{color:var(--green);text-decoration:underline;text-underline-offset:2px;}
+.status-text .expired{color:var(--danger);font-weight:700;}
+
+.verify-btn{
+  color:var(--green);display:inline-flex;align-items:center;gap:9px;
+  font-size:16px;font-weight:700;padding:6px 0;
+  text-decoration:underline;text-underline-offset:2px;white-space:nowrap;
+}
+.verify-btn:hover{color:var(--green-dark);}
+.verify-icon{
+  width:20px;height:20px;flex:0 0 20px;border-radius:50%;background:var(--green);
+  color:#fff;display:inline-flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;line-height:1;
+}
+
+/* ============ CONTENT ============ */
+.content{
+  padding:52px 45px 60px 40px;
+  display:grid;grid-template-columns:308px minmax(0,1fr);gap:56px;align-items:start;
+}
+.badge-panel{display:flex;flex-direction:column;align-items:center;position:sticky;top:28px;}
+.badge{width:100%;max-width:308px;height:auto;}
+
+h1{
+  font-family:'Source Serif 4','Source Serif Pro',Georgia,serif;
+  font-size:34px;line-height:1.15;font-weight:700;color:#111;
+  margin-bottom:16px;letter-spacing:-.2px;
+}
+.meta{margin-bottom:28px;font-size:15.5px;line-height:1.95;color:#2b3035;}
+.meta a{color:var(--green);text-decoration:underline;text-underline-offset:2px;}
+
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 28px;}
+.pill{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 14px;
+  border-radius:4px;background:var(--pill-bg);color:#1c2227;
+  font-size:14.5px;font-weight:600;line-height:1;
+}
+.pill.gray{background:#ededed;}
+.pill-icon{width:15px;height:15px;flex:0 0 15px;color:#20262b;}
+
+.desc{max-width:900px;font-size:15.5px;line-height:1.75;color:#2b3035;}
+.learn{
+  display:inline-block;margin-top:22px;font-size:16px;font-weight:600;
+  color:var(--green);text-decoration:underline;text-underline-offset:2px;
+}
+
+.details{margin-top:48px;}
+.details h3{font-size:22px;font-weight:700;color:#23272b;margin-bottom:18px;}
+.criteria{padding-left:24px;font-size:16px;line-height:1.75;color:#30363b;}
+.criteria li{margin-bottom:10px;}
+.skills{display:flex;flex-wrap:wrap;gap:9px;}
+.skill{
+  border:1px solid #aeb6bc;border-radius:5px;padding:9px 13px;background:#fff;
+  color:var(--green);font-size:14.5px;line-height:1.25;
+  transition:background .2s ease,border-color .2s ease;
+}
+.skill:hover{background:#f5faf9;border-color:var(--green);text-decoration:none;}
+
+/* ============ MODAL ============ */
+.modal-backdrop{
+  position:fixed;inset:0;z-index:9999;display:none;
+  align-items:center;justify-content:center;padding:22px;
+  background:rgba(0,0,0,.54);backdrop-filter:blur(2px);
+}
+.modal-backdrop.show{display:flex;animation:fadeIn .18s ease-out;}
+.verify-modal{
+  width:min(540px,94vw);max-height:84vh;overflow-y:auto;position:relative;
+  padding:32px 34px 28px;border-radius:15px;background:#fff;
+  box-shadow:0 28px 80px rgba(0,0,0,.28);animation:modalIn .22s ease-out;
+}
+.verify-modal h2{
+  font-family:'Source Serif 4','Source Serif Pro',Georgia,serif;
+  font-size:34px;font-weight:700;margin:0 46px 20px 0;line-height:1.15;
+}
+.close-modal{position:absolute;top:16px;right:18px;width:38px;height:38px;color:var(--green);font-size:32px;line-height:1;}
+.verify-list{margin-top:4px;}
+.verify-row{
+  min-height:68px;padding:17px 4px;border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:32px minmax(0,1fr);gap:14px;align-items:center;
+  font-size:16px;line-height:1.45;opacity:.36;transform:translateY(3px);
+  transition:opacity .22s ease,transform .22s ease,background .22s ease;
+}
+.verify-row:last-child{border-bottom:0;}
+.verify-row.active{opacity:1;transform:translateY(0);background:linear-gradient(90deg,rgba(10,107,99,.045),rgba(10,107,99,0));}
+.verify-row.done{opacity:1;transform:translateY(0);}
+.row-icon{width:28px;height:28px;display:flex;align-items:center;justify-content:center;}
+.mini-loader{width:22px;height:22px;border:3px solid #d7e6e4;border-top-color:var(--green);border-radius:50%;display:none;animation:spin .72s linear infinite;}
+.checkmark{display:none;color:var(--green);font-size:21px;font-weight:800;}
+.verify-row.active .mini-loader{display:block;}
+.verify-row.done .checkmark{display:block;}
+.verify-row.expired-row .checkmark{color:var(--danger);}
+
+@keyframes spin{to{transform:rotate(360deg);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes modalIn{from{opacity:0;transform:translateY(9px) scale(.985);}to{opacity:1;transform:translateY(0) scale(1);}}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1000px){
+  .header{padding:14px 24px;height:auto;flex-wrap:wrap;gap:14px;}
+  .search-box{order:3;flex-basis:100%;max-width:100%;margin-left:0;}
+  .status-bar{grid-template-columns:72px minmax(0,1fr);padding:20px 24px;gap:18px;}
+  .status-icon{width:72px;height:72px;font-size:40px;}
+  .verify-btn{grid-column:2;justify-self:start;margin-top:-6px;}
+  .content{grid-template-columns:1fr;gap:36px;padding:40px 24px;}
+  .badge-panel{position:static;}
+  .badge{max-width:300px;}
+}
+@media (max-width:600px){
+  h1{font-size:26px;}
+  .header-actions{gap:8px;}
+  .btn{height:44px;padding:0 14px;font-size:13px;}
+  .verify-modal h2{font-size:28px;}
+  .verify-row{font-size:15px;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <a class="logo" href="https://info.credly.com/" target="_self" aria-label="Credly by Pearson">
+      <svg viewBox="0 0 220 70" width="130" height="46" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="48" font-family="Georgia,'Times New Roman',serif" font-style="italic"
+              font-size="52" font-weight="700" fill="#f26e21" letter-spacing="-2">Credly</text>
+        <text x="42" y="65" font-family="'Open Sans',Arial,sans-serif"
+              font-size="10" font-weight="500" fill="#5b6570" letter-spacing=".3">by Pearson</text>
+      </svg>
+    </a>
+
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text"
+             placeholder="Search by badge name, organization, skill, occupation or learning pathway"
+             aria-label="Search">
+    </div>
+
+    <nav class="header-actions">
+      <a class="btn btn-outline" href="https://www.credly.com/users/sign_up">Create Account</a>
+      <a class="btn btn-primary" href="https://www.credly.com/users/sign_in">Sign In</a>
+    </nav>
+  </header>
+
+  <!-- ============ STATUS BAR ============ -->
+  <section class="status-bar">
+    <div class="status-icon">!</div>
+
+    <div class="status-text">
+      <div>This badge was issued to <span class="name">Ahmed Mamdouh Labib Ali</span></div>
+      <div>
+        Date issued: August 21, 2026
+        &nbsp;|&nbsp;
+        <span class="expired">Expired: August 28, 2026</span>
+      </div>
+    </div>
+
+    <button class="verify-btn" id="openVerify" type="button">
+      <span class="verify-icon">✓</span>
+      Verify
+    </button>
+  </section>
+
+  <!-- ============ CONTENT ============ -->
+  <main class="content">
+    <aside class="badge-panel">
+      <img class="badge" src="badge.png" alt="CMA Certified Management Accountant badge"
+           onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 308 330%22><rect width=%22308%22 height=%22330%22 fill=%22%23f7f7f7%22 stroke=%22%23c9cdd0%22 stroke-width=%222%22 stroke-dasharray=%226 4%22/><text x=%22154%22 y=%22165%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2214%22 fill=%22%238a9199%22>Place CMA badge image here</text><text x=%22154%22 y=%22185%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2212%22 fill=%22%238a9199%22>(badge.png)</text></svg>';">
+    </aside>
+
+    <section>
+      <h1>Certified Management Accountant</h1>
+
+      <div class="meta">
+        <div>
+          Issued by
+          <a href="https://www.credly.com/organizations/certified-management-accountant-cma/badges"
+             target="_blank" rel="noopener noreferrer">Certified Management Accountant: CMA®</a>
+        </div>
+        <div>
+          Authorized by
+          <a href="https://www.credly.com/organizations/ima-institute-of-management-accountants/badges"
+             target="_blank" rel="noopener noreferrer">IMA | Institute of Management Accountants</a>
+        </div>
+      </div>
+
+      <div class="pills">
+        <span class="pill">
+          <svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="10" r="5.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M9.3 14.4 8 20l4-2.2L16 20l-1.3-5.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+            <path d="M10.4 10.1l1.1 1.1 2.2-2.3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Certification
+        </span>
+
+        <span class="pill gray">
+          <svg class="pill-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4 4 8.2 12 12.4 20 8.2 12 4Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M6.8 11.4 12 14.3l5.2-2.9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6.8 15.1 12 18l5.2-2.9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Advanced
+        </span>
+      </div>
+
+      <div class="desc">
+        The CMA® is the globally recognized, advanced-level professional certification for accounting and financial professionals in business. Achieving the CMA demonstrates expertise in financial planning, analysis, control, decision support, and professional ethics – skills that are in high demand on finance teams around the world.
+      </div>
+
+      <a class="learn" href="https://www.imaglobal.org/" target="_blank" rel="noopener noreferrer">Learn more</a>
+
+      <section class="details">
+        <h3>Certification Criteria</h3>
+        <ul class="criteria">
+          <li>Pass the CMA exams</li>
+          <li>Have two continuous years of professional experience in management accounting or financial management</li>
+          <li>Hold a bachelor's degree from an accredited college/university or a related professional certification</li>
+          <li>Maintain membership in IMA</li>
+          <li>Abide by IMA's Statement of Ethical Professional Practice</li>
+          <li>30 hours of continuing professional education are required annually to maintain CMA credential</li>
+        </ul>
+
+        <h3 style="margin-top:34px">Skills</h3>
+        <div class="skills">
+          <a class="skill" href="https://www.credly.com/skills/corporate-finance" target="_blank" rel="noopener noreferrer">Corporate Finance</a>
+          <a class="skill" href="https://www.credly.com/skills/cost-management" target="_blank" rel="noopener noreferrer">Cost Management</a>
+          <a class="skill" href="https://www.credly.com/skills/decision-analysis" target="_blank" rel="noopener noreferrer">Decision Analysis</a>
+          <a class="skill" href="https://www.credly.com/skills/external-financial-reporting-decisions" target="_blank" rel="noopener noreferrer">External Financial Reporting Decisions</a>
+          <a class="skill" href="https://www.credly.com/skills/financial-statement-analysis" target="_blank" rel="noopener noreferrer">Financial Statement Analysis</a>
+          <a class="skill" href="https://www.credly.com/skills/internal-controls" target="_blank" rel="noopener noreferrer">Internal Controls</a>
+          <a class="skill" href="https://www.credly.com/skills/investment-decisions" target="_blank" rel="noopener noreferrer">Investment Decisions</a>
+          <a class="skill" href="https://www.credly.com/skills/performance-management" target="_blank" rel="noopener noreferrer">Performance Management</a>
+          <a class="skill" href="https://www.credly.com/skills/planning-budgeting-and-forecasting" target="_blank" rel="noopener noreferrer">Planning, Budgeting And Forecasting</a>
+          <a class="skill" href="https://www.credly.com/skills/professional-ethics" target="_blank" rel="noopener noreferrer">Professional Ethics</a>
+          <a class="skill" href="https://www.credly.com/skills/risk-management" target="_blank" rel="noopener noreferrer">Risk Management</a>
+          <a class="skill" href="https://www.credly.com/skills/technology-and-analytics" target="_blank" rel="noopener noreferrer">Technology And Analytics</a>
+        </div>
+      </section>
+    </section>
+  </main>
+</div>
+
+<!-- ============ VERIFY MODAL ============ -->
+<div class="modal-backdrop" id="verifyBackdrop" aria-hidden="true">
+  <div class="verify-modal" role="dialog" aria-modal="true" aria-labelledby="verifyTitle">
+    <button class="close-modal" id="closeVerify" type="button" aria-label="Close">×</button>
+    <h2 id="verifyTitle">Verification</h2>
+
+    <div class="verify-list" id="verifyList">
+      <div class="verify-row"><span class="row-icon"><span class="mini-loader"></span><span class="checkmark">✓</span></span><span>Issued on August 21, 2026</span></div>
+      <div class="verify-row"><span class="row-icon"><span class="mini-loader"></span><span class="checkmark">✓</span></span><span>Issued by Certified Management Accountant: CMA®</span></div>
+      <div class="verify-row"><span class="row-icon"><span class="mini-loader"></span><span class="checkmark">✓</span></span><span>Credly credential information</span></div>
+      <div class="verify-row"><span class="row-icon"><span class="mini-loader"></span><span class="checkmark">✓</span></span><span>Authorized by IMA | Institute of Management Accountants</span></div>
+      <div class="verify-row"><span class="row-icon"><span class="mini-loader"></span><span class="checkmark">✓</span></span><span>Issued to Ahmed Mamdouh Labib Ali</span></div>
+      <div class="verify-row"><span class="row-icon"><span class="mini-loader"></span><span class="checkmark">✓</span></span><span>Accepted on August 25, 2026</span></div>
+      <div class="verify-row expired-row"><span class="row-icon"><span class="mini-loader"></span><span class="checkmark">!</span></span><span>Expired on August 28, 2026</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var openBtn  = document.getElementById("openVerify");
+  var backdrop = document.getElementById("verifyBackdrop");
+  var closeBtn = document.getElementById("closeVerify");
+  var rows     = Array.prototype.slice.call(document.querySelectorAll("#verifyList .verify-row"));
+  var timers   = [];
+
+  function clearTimers(){ timers.forEach(clearTimeout); timers = []; }
+  function resetRows(){ rows.forEach(function(r){ r.classList.remove("active","done"); }); }
+
+  function runVerification(){
+    resetRows();
+    var gap = 760, load = 520;
+    rows.forEach(function(row, i){
+      timers.push(setTimeout(function(){
+        rows.forEach(function(r){ r.classList.remove("active"); });
+        row.classList.add("active");
+      }, i * gap));
+      timers.push(setTimeout(function(){
+        row.classList.remove("active");
+        row.classList.add("done");
+      }, i * gap + load));
+    });
+  }
+
+  function openModal(){
+    clearTimers();
+    backdrop.classList.add("show");
+    backdrop.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+    runVerification();
+  }
+
+  function closeModal(){
+    clearTimers();
+    backdrop.classList.remove("show");
+    backdrop.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+    resetRows();
+  }
+
+  openBtn.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+  backdrop.addEventListener("click", function(e){ if (e.target === backdrop) closeModal(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeModal(); });
+})();
+</script>
+</body>
+</html>
